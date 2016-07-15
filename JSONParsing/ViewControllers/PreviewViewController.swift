@@ -42,10 +42,10 @@ class PreviewViewController: UIViewController, UITableViewDelegate,UITableViewDa
             valueString = dataObjectForUI?.singleDictionaryObject?.valueForKey(keyString) as! String
         case .CompanyInfo:
             keyString = companyInfo[indexPath.row]
-            valueString = dataObjectForUI?.companyInfo?.testDic.valueForKey(keyString) as! String
+            valueString = dataObjectForUI?.companyInfo?.companyDictionary.valueForKey(keyString) as! String
         case .AddressInfo:
             keyString = addressInfo[indexPath.row]
-            valueString = dataObjectForUI?.address?.test2.valueForKey(keyString) as! String
+            valueString = dataObjectForUI?.address?.addressDictionary.valueForKey(keyString) as! String
         }
         cell.valueLabel.text = valueString
         cell.keyLabel.text = keyString.capitalizedString + ":"

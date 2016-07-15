@@ -19,14 +19,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.registerClass(UITableViewCell.self,
                                 forCellReuseIdentifier: "Cell")
         getJsonFromFile()
-        setUpdata()
+        setUpData()
         super.viewDidLoad()
         
     }
     
-    func setUpdata()
+    func setUpData()
     {
-        for dictValue in myJson! {
+        for dictValue in myJson!
+        {
             let obj = DataObject(data: dictValue as! NSDictionary)
             dataObjectForClass.append(obj)
         }
@@ -37,7 +38,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         if dataObjectForClass.count > 0 {
             return dataObjectForClass.count
         }

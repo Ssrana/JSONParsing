@@ -38,13 +38,13 @@ class DataObject {
         internal var name: String?
         internal var catchPhrase: String?
         internal var bs: String?
-        internal var testDic:NSMutableDictionary = [:]
+        internal var companyDictionary :NSMutableDictionary = [:]
         
         init(companyInfo: NSDictionary)
         {
-            testDic.setValue(companyInfo["name"], forKey: "name")
-            testDic.setValue(companyInfo["catchPhrase"], forKey: "catchPhrase")
-            testDic.setValue(companyInfo["bs"], forKey: "bs")
+            companyDictionary.setValue(companyInfo["name"], forKey: "name")
+            companyDictionary.setValue(companyInfo["catchPhrase"], forKey: "catchPhrase")
+            companyDictionary.setValue(companyInfo["bs"], forKey: "bs")
             self.name = String(companyInfo["name"])
             self.catchPhrase = String(companyInfo["catchPhrase"])
             self.bs = String(companyInfo["bs"])
@@ -58,14 +58,14 @@ class DataObject {
         var city: String?
         var zipcode: String?
         var geo: AddressGeo?
-        var test2:NSMutableDictionary = [:]
+        var addressDictionary:NSMutableDictionary = [:]
         
         init(addressInfo: NSDictionary)
         {
-            test2.setValue(addressInfo["street"], forKey: "street")
-            test2.setValue(addressInfo["suite"], forKey: "suite")
-            test2.setValue(addressInfo["city"], forKey: "city")
-            test2.setValue(addressInfo["zipcode"], forKey: "zipcode")
+            addressDictionary.setValue(addressInfo["street"], forKey: "street")
+            addressDictionary.setValue(addressInfo["suite"], forKey: "suite")
+            addressDictionary.setValue(addressInfo["city"], forKey: "city")
+            addressDictionary.setValue(addressInfo["zipcode"], forKey: "zipcode")
             
             self.street = String(addressInfo["street"])
             self.suite = String(addressInfo["suite"])
@@ -83,8 +83,8 @@ class DataObject {
         
         init(addressGeo: NSDictionary)
         {
-            self.lon = String()
-            self.lat = String()
+            self.lon = String(addressGeo["lon"])
+            self.lat = String(addressGeo["lat"])
         }
     }
     
