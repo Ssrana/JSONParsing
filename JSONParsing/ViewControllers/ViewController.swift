@@ -14,14 +14,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
     var dataObjectForClass = [DataObject]()
     override func viewDidLoad() {
+         super.viewDidLoad()
         title = "List Of Elements"
         self.automaticallyAdjustsScrollViewInsets = false
         tableView.registerClass(UITableViewCell.self,
                                 forCellReuseIdentifier: "Cell")
         getJsonFromFile()
-        setUpData()
-        super.viewDidLoad()
-        
+        setUpData() 
     }
     
     func setUpData()
